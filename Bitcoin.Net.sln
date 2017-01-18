@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A98B140-8CCA-4206-89E4-0CFB98569786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitcoin.Tests", "Bitcoin.Tests\Bitcoin.Tests.csproj", "{75B2F277-3CBD-42A8-B317-EE44728BC5B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitcoin.Api", "Bitcoin.Api\Bitcoin.Api.csproj", "{636C5473-B308-49BD-B25A-04A6DA77D56A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75B2F277-3CBD-42A8-B317-EE44728BC5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B2F277-3CBD-42A8-B317-EE44728BC5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B2F277-3CBD-42A8-B317-EE44728BC5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B2F277-3CBD-42A8-B317-EE44728BC5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{636C5473-B308-49BD-B25A-04A6DA77D56A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{636C5473-B308-49BD-B25A-04A6DA77D56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{636C5473-B308-49BD-B25A-04A6DA77D56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{636C5473-B308-49BD-B25A-04A6DA77D56A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75B2F277-3CBD-42A8-B317-EE44728BC5B1} = {2A98B140-8CCA-4206-89E4-0CFB98569786}
+	EndGlobalSection
+EndGlobal

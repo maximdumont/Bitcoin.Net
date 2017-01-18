@@ -1,0 +1,7 @@
+D:\Git\Bitcoin.Net\Bitcoin.Api\bin\Debug\Bitcoin.Api.dll
+D:\Git\Bitcoin.Net\Bitcoin.Api\bin\Debug\Bitcoin.Api.pdb
+D:\Git\Bitcoin.Net\Bitcoin.Api\bin\Debug\RestSharp.dll
+D:\Git\Bitcoin.Net\Bitcoin.Api\bin\Debug\RestSharp.xml
+D:\Git\Bitcoin.Net\Bitcoin.Api\obj\Debug\Bitcoin.Api.csprojResolveAssemblyReference.cache
+D:\Git\Bitcoin.Net\Bitcoin.Api\obj\Debug\Bitcoin.Api.dll
+D:\Git\Bitcoin.Net\Bitcoin.Api\obj\Debug\Bitcoin.Api.pdb

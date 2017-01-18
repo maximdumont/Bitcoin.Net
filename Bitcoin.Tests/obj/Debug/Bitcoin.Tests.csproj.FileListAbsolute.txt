@@ -1,0 +1,11 @@
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\Bitcoin.Tests.dll
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\Bitcoin.Tests.pdb
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\Bitcoin.Api.dll
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\RestSharp.dll
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\Bitcoin.Api.pdb
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\RestSharp.xml
+D:\Git\Bitcoin.Net\Bitcoin.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\Git\Bitcoin.Net\Bitcoin.Tests\obj\Debug\Bitcoin.Tests.csprojResolveAssemblyReference.cache
+D:\Git\Bitcoin.Net\Bitcoin.Tests\obj\Debug\Bitcoin.Tests.dll
+D:\Git\Bitcoin.Net\Bitcoin.Tests\obj\Debug\Bitcoin.Tests.pdb
