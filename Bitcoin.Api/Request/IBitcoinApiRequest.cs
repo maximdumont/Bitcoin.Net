@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using RestSharp;
 
 namespace Bitcoin.Api.Request
 {
-    public interface IBitcoinApiRequest
+    public interface IBitcoinChartsApiRequest
     {
         string ChartType { get; set; }
         IRestRequest CreateRequest();
