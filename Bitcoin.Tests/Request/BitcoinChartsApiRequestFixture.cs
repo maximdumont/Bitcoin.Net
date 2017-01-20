@@ -12,7 +12,7 @@ namespace Bitcoin.Tests.Request
         public void BitcoinChartsApiRequestAssignableFromInterfaceSuccess()
         {
             var request = new BitcoinChartsApiRequest();
-            Assert.IsInstanceOfType(request, typeof(IBitcoinApiRequest));
+            Assert.IsInstanceOfType(request, typeof(BitcoinChartsApiRequest));
         }
 
         [TestMethod]
@@ -24,6 +24,12 @@ namespace Bitcoin.Tests.Request
             Assert.AreEqual(request.TimeSpan.Days, 180);
             Assert.AreEqual(request.RollingAverage.Days, 180);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) populate requests with new values is correct. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void PopulateRequestsWithNewValuesIsCorrect()
@@ -41,6 +47,12 @@ namespace Bitcoin.Tests.Request
             Assert.AreEqual(request.RollingAverage.Days, 170);
             Assert.AreEqual(request.Start, System.DateTime.MaxValue);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) creating request produces valid request. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CreatingRequestProducesValidRequest()

@@ -1,21 +1,24 @@
-namespace Bitcoin.Api.Response
+﻿using RestSharp;
+
+namespace Bitcoin.Api.Request
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A raw bitcoin point. </summary>
+    /// <summary>   Interface for bitcoin charts API request. </summary>
     /// <remarks>   Maxim, 1/19/2017. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    public class RawBitcoinPoint
+    public interface IBitcoinChartsApiRequest
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the x coordinate. </summary>
-        /// <value> The x coordinate. </value>
+        /// <summary>   Gets or sets the type of the chart. See https://blockchain.info/charts for more info </summary>
+        /// <value> The type of the chart. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public long X { get; set; }
+        string ChartType { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the y coordinate. </summary>
-        /// <value> The y coordinate. </value>
+        /// <summary>   Creates the request based on object data </summary>
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        /// <returns>   The new request. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public double Y { get; set; }
+        IRestRequest CreateRequest();
     }
 }

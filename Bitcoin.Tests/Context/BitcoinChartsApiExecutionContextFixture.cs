@@ -7,14 +7,30 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Bitcoin.Tests.Context
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   (Unit Test Class) a bitcoin charts API execution context fixture. </summary>
+    ///
+    /// <remarks>   Maxim, 1/19/2017. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     [TestClass]
     public class BitcoinChartsApiExecutionContextFixture
     {
+
+        /// <summary>   sample stub request. </summary>
         private readonly BitcoinChartsApiRequest _request = new BitcoinChartsApiRequest
         {
             TimeSpan = new System.TimeSpan(1, 0, 0, 0),
             Start = System.DateTime.Now.AddDays(-2)
         };
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// (Unit Test Method) can get request values with proper date times from valid request.
+        /// </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanGetRequestValuesWithProperDateTimesFromValidRequest()
@@ -28,6 +44,14 @@ namespace Bitcoin.Tests.Context
             Assert.IsNotNull(response.ConvertedValues);
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// (Unit Test Method) can execute from static bitcoin API context with REST request.
+        /// </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanExecuteFromStaticBitcoinApiContextWithRestRequest()
         {
@@ -39,6 +63,14 @@ namespace Bitcoin.Tests.Context
             Assert.IsNotNull(response);
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// (Unit Test Method) can execute from static bitcoin API context with bitcoin request.
+        /// </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanExecuteFromStaticBitcoinApiContextWithBitcoinRequest()
         {
@@ -49,6 +81,14 @@ namespace Bitcoin.Tests.Context
             Assert.IsNotNull(response);
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// (Unit Test Method) can execute request from bitcoin API request with hours.
+        /// </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanExecuteRequestFromBitcoinApiRequestWithHours()
         {
@@ -58,12 +98,24 @@ namespace Bitcoin.Tests.Context
             Assert.IsNotNull(result);
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) default constructor produces valid URI. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void DefaultConstructorProducesValidUri()
         {
             var request = new BitcoinChartsApiExecutionContext<object>();
             Assert.AreEqual(request.Route, new Uri("https://api.blockchain.info/charts"));
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can set new route produces valid URI. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanSetNewRouteProducesValidUri()
@@ -72,6 +124,12 @@ namespace Bitcoin.Tests.Context
             var request = new BitcoinChartsApiExecutionContext<object>(uri);
             Assert.AreEqual(request.Route, uri);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can execute request from bitcoin API request. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanExecuteRequestFromBitcoinApiRequest()
@@ -83,6 +141,12 @@ namespace Bitcoin.Tests.Context
             Assert.IsNotNull(result);
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can execute request from i REST request. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanExecuteRequestFromIRestRequest()
         {
@@ -92,6 +156,12 @@ namespace Bitcoin.Tests.Context
             var result = context.Execute(request.CreateRequest());
             Assert.IsNotNull(result);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can produce valid type on mapped response. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanProduceValidTypeOnMappedResponse()
@@ -110,6 +180,12 @@ namespace Bitcoin.Tests.Context
             Assert.IsNotNull(result.Values.First().X);
             Assert.IsNotNull(result.Values.First().Y);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) throw error on invalid mapping. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]

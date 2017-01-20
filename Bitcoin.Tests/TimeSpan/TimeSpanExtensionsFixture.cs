@@ -3,9 +3,21 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Bitcoin.Tests.TimeSpan
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   (Unit Test Class) a time span extensions fixture. </summary>
+    ///
+    /// <remarks>   Maxim, 1/19/2017. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     [TestClass]
     public class TimeSpanExtensionsFixture
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse one day to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanParseOneDayToValidString()
         {
@@ -14,6 +26,12 @@ namespace Bitcoin.Tests.TimeSpan
 
             Assert.AreEqual(result, "1days");
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse two days to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanParseTwoDaysToValidString()
@@ -24,6 +42,12 @@ namespace Bitcoin.Tests.TimeSpan
             Assert.AreEqual(result, "2days");
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse one year to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanParseOneYearToValidString()
         {
@@ -32,6 +56,12 @@ namespace Bitcoin.Tests.TimeSpan
 
             Assert.AreEqual(result, "1years");
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse two years to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanParseTwoYearsToValidString()
@@ -42,6 +72,12 @@ namespace Bitcoin.Tests.TimeSpan
             Assert.AreEqual(result, "2years");
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse one week to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanParseOneWeekToValidString()
         {
@@ -50,6 +86,12 @@ namespace Bitcoin.Tests.TimeSpan
 
             Assert.AreEqual(result, "1weeks");
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse two weeks to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanParseTwoWeeksToValidString()
@@ -60,6 +102,12 @@ namespace Bitcoin.Tests.TimeSpan
             Assert.AreEqual(result, "2weeks");
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse one hour to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [TestMethod]
         public void CanParseOneHourToValidString()
         {
@@ -68,6 +116,12 @@ namespace Bitcoin.Tests.TimeSpan
 
             Assert.AreEqual(result, "1hours");
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (Unit Test Method) can parse two hours to valid string. </summary>
+        ///
+        /// <remarks>   Maxim, 1/19/2017. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void CanParseTwoHoursToValidString()

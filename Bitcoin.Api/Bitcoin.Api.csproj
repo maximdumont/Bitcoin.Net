@@ -51,7 +51,7 @@
     <Compile Include="Extensions\TimeSpanExtensions.cs" />
     <Compile Include="Response\BitcoinChartsApiResponse.cs" />
     <Compile Include="Response\RawBitcoinPoint.cs" />
-    <Compile Include="Request\IBitcoinApiRequest.cs" />
+    <Compile Include="Request\IBitcoinChartsApiRequest.cs" />
     <Compile Include="Context\IBitcoinChartsApiExecutionContext.cs" />
     <Compile Include="Factory\BitcoinDataFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
