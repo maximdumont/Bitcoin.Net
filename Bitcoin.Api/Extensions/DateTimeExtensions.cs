@@ -29,7 +29,7 @@ namespace Bitcoin.Api.Extensions
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// An int extension method that converts an integer to an integer to unix time stamp.
+        /// An int extension method that convert an integer to unix time stamp.
         /// </summary>
         ///
         /// <remarks>   Maxim, 1/19/2017. </remarks>
@@ -44,7 +44,7 @@ namespace Bitcoin.Api.Extensions
             return ToUnixTimeStamp((long) unixTime);
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   An int extension method that converts a double to an unix time stamp. </summary>
         ///
         /// <remarks>   Maxim, 1/19/2017. </remarks>
