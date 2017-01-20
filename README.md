@@ -1,2 +1,4 @@
 # Bitcoin.Net
-Bitcoin Wrapper For .Net Projects
+
+
+Bitcoin Wrapper for .NET using the Bitcoin charts API located at https://api.blockchain.info/charts
