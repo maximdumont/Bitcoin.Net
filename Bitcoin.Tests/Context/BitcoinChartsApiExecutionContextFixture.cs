@@ -1,24 +1,60 @@
 ﻿using System;
 using System.Linq;
-using Bitcoin.Api.Data;
+using Bitcoin.Api.Context;
+using Bitcoin.Api.Request;
+using Bitcoin.Api.Response;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Project_S.Tests.Client
+namespace Bitcoin.Tests.Context
 {
     [TestClass]
     public class BitcoinChartsApiExecutionContextFixture
     {
+        private readonly BitcoinChartsApiRequest _request = new BitcoinChartsApiRequest
+        {
+            TimeSpan = new System.TimeSpan(1, 0, 0, 0),
+            Start = System.DateTime.Now.AddDays(-2)
+        };
+
+        [TestMethod]
+        public void CanGetRequestValuesWithProperDateTimesFromValidRequest()
+        {
+            BitcoinChartsApiResponse response;
+            var result = BitcoinChartsApiExecutionContext<BitcoinChartsApiResponse>.TryExecute(_request.CreateRequest(),
+                out response);
+
+            Assert.IsTrue(result);
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ConvertedValues);
+        }
+
+        [TestMethod]
+        public void CanExecuteFromStaticBitcoinApiContextWithRestRequest()
+        {
+            BitcoinChartsApiResponse response;
+            var result = BitcoinChartsApiExecutionContext<BitcoinChartsApiResponse>.TryExecute(_request.CreateRequest(),
+                out response);
+
+            Assert.IsTrue(result);
+            Assert.IsNotNull(response);
+        }
+
+        [TestMethod]
+        public void CanExecuteFromStaticBitcoinApiContextWithBitcoinRequest()
+        {
+            BitcoinChartsApiResponse response;
+            var result = BitcoinChartsApiExecutionContext<BitcoinChartsApiResponse>.TryExecute(_request, out response);
+
+            Assert.IsTrue(result);
+            Assert.IsNotNull(response);
+        }
+
         [TestMethod]
         public void CanExecuteRequestFromBitcoinApiRequestWithHours()
         {
-            var request = new BitcoinChartsApiRequest
-            {
-                TimeSpan = new TimeSpan(1, 0, 0, 0),
-                Start = DateTime.Now.AddDays(-2)
-            };
             var context = new BitcoinChartsApiExecutionContext<BitcoinChartsApiResponse>();
 
-            var result = context.Execute(request);
+            var result = context.Execute(_request);
             Assert.IsNotNull(result);
         }
 

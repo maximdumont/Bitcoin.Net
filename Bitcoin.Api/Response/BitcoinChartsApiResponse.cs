@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace Bitcoin.Api.Data
+namespace Bitcoin.Api.Response
 {
     public class BitcoinChartsApiResponse
     {
         public BitcoinChartsApiResponse(string status, string name, string unit, string period,
-            List<BitcoinPoint> points)
+            List<RawBitcoinPoint> points)
         {
             Status = status;
             Name = name;
@@ -23,7 +24,9 @@ namespace Bitcoin.Api.Data
         public string Name { get; set; }
         public string Unit { get; set; }
         public string Period { get; set; }
-        public List<BitcoinPoint> Values { get; set; }
+        public List<RawBitcoinPoint> Values { get; set; }
+
+        public List<ConvertedBitcoinPoint> ConvertedValues => Values.Select(m => new ConvertedBitcoinPoint(m)).ToList();
 
         public override string ToString()
         {

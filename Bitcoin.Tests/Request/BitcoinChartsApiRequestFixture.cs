@@ -1,9 +1,9 @@
 ﻿using System;
-using Bitcoin.Api.Data;
+using Bitcoin.Api.Request;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 
-namespace Bitcoin.Tests
+namespace Bitcoin.Tests.Request
 {
     [TestClass]
     public class BitcoinChartsApiRequestFixture
@@ -23,11 +23,6 @@ namespace Bitcoin.Tests
             Assert.AreEqual(request.ChartType, "market-price");
             Assert.AreEqual(request.TimeSpan.Days, 180);
             Assert.AreEqual(request.RollingAverage.Days, 180);
-            Assert.AreEqual(request.DateTimeQueryStringFormat, "yyyy-MM-dd");
-            Assert.AreEqual(request.Start.ToString(request.DateTimeQueryStringFormat),
-                DateTime.Now.AddYears(-1).ToString(request.DateTimeQueryStringFormat));
-            Assert.AreEqual(request.Format, "json");
-            Assert.AreEqual(request.LimitTo1500, true);
         }
 
         [TestMethod]
@@ -36,27 +31,24 @@ namespace Bitcoin.Tests
             var request = new BitcoinChartsApiRequest
             {
                 ChartType = "My New Chart",
-                DateTimeQueryStringFormat = "yyyy-dd-mm",
-                Format = "csv",
-                LimitTo1500 = false,
-                RollingAverage = new TimeSpan(170, 0, 0, 0),
-                Start = DateTime.MaxValue,
-                TimeSpan = new TimeSpan(170, 0, 0, 0)
+                RollingAverage = new System.TimeSpan(170, 0, 0, 0),
+                Start = System.DateTime.MaxValue,
+                TimeSpan = new System.TimeSpan(170, 0, 0, 0)
             };
 
             Assert.AreEqual(request.ChartType, "My New Chart");
             Assert.AreEqual(request.TimeSpan.Days, 170);
             Assert.AreEqual(request.RollingAverage.Days, 170);
-            Assert.AreEqual(request.DateTimeQueryStringFormat, "yyyy-dd-mm");
-            Assert.AreEqual(request.Start, DateTime.MaxValue);
-            Assert.AreEqual(request.Format, "csv");
-            Assert.AreEqual(request.LimitTo1500, false);
+            Assert.AreEqual(request.Start, System.DateTime.MaxValue);
         }
 
         [TestMethod]
         public void CreatingRequestProducesValidRequest()
         {
-            var request = new BitcoinChartsApiRequest();
+            var request = new BitcoinChartsApiRequest
+            {
+                TimeSpan = new System.TimeSpan(1, 0, 0, 0)
+            };
             var restRequest = request.CreateRequest();
 
             Assert.IsInstanceOfType(restRequest, typeof(IRestRequest));

@@ -54,12 +54,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BitcoinChartsApiExecutionContextFixture.cs" />
-    <Compile Include="BitcoinChartsApiRequestFixture.cs" />
+    <Compile Include="Context\BitcoinChartsApiExecutionContextFixture.cs" />
+    <Compile Include="DateTime\DateTimeExtensionsFixture.cs" />
+    <Compile Include="Request\BitcoinChartsApiRequestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Compile Include="TimeSpan\TimeSpanExtensionsFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bitcoin.Api\Bitcoin.Api.csproj">
@@ -70,6 +69,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

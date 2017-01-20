@@ -1,7 +1,9 @@
 ﻿using System;
-using Bitcoin.Api.Data;
+using Bitcoin.Api.Context;
+using Bitcoin.Api.Request;
+using Bitcoin.Api.Response;
 
-namespace Project_S.Bitcoin.Factory
+namespace Bitcoin.Api.Factory
 {
     public class BitcoinDataFactory
     {
@@ -9,8 +11,7 @@ namespace Project_S.Bitcoin.Factory
         {
             var apiRequest = new BitcoinChartsApiRequest
             {
-                Start = date,
-                LimitTo1500 = cap
+                Start = date
             };
             var client = new BitcoinChartsApiExecutionContext<BitcoinChartsApiResponse>();
             return client.Execute(apiRequest.CreateRequest());

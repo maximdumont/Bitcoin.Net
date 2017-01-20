@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,19 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\BitcoinChartsApiExecutionContext.cs" />
-    <Compile Include="Data\BitcoinChartsApiRequest.cs" />
-    <Compile Include="Data\BitcoinChartsApiResponse.cs" />
-    <Compile Include="Data\BitcoinPoint.cs" />
-    <Compile Include="Data\IBitcoinApiRequest.cs" />
-    <Compile Include="Data\IBitcoinMarktePriceChartsApi.cs" />
-    <Compile Include="Data\IBitcoinChartsApiExecutionContext.cs" />
+    <Compile Include="Context\BitcoinChartsApiExecutionContext.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Request\BitcoinChartsApiRequest.cs" />
+    <Compile Include="Extensions\TimeSpanExtensions.cs" />
+    <Compile Include="Response\BitcoinChartsApiResponse.cs" />
+    <Compile Include="Response\RawBitcoinPoint.cs" />
+    <Compile Include="Request\IBitcoinApiRequest.cs" />
+    <Compile Include="Context\IBitcoinChartsApiExecutionContext.cs" />
     <Compile Include="Factory\BitcoinDataFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response\ConvertedBitcoinPoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

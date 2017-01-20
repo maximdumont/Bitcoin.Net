@@ -1,7 +1,8 @@
 using System;
+using Bitcoin.Api.Request;
 using RestSharp;
 
-namespace Bitcoin.Api.Data
+namespace Bitcoin.Api.Context
 {
     public class BitcoinChartsApiExecutionContext<T> : IBitcoinChartsApiExecutionContext<T> where T : new()
     {
@@ -34,5 +35,27 @@ namespace Bitcoin.Api.Data
         }
 
         public T Execute(IBitcoinApiRequest request) => Execute(request.CreateRequest());
+
+        public static bool TryExecute(IBitcoinApiRequest request, out T result)
+            => TryExecute(request.CreateRequest(), out result);
+
+        public static bool TryExecute(IRestRequest request, out T result)
+        {
+            result = default(T);
+            var isSuccess = true;
+
+            var client = new BitcoinChartsApiExecutionContext<T>();
+
+            try
+            {
+                result = client.Execute(request);
+            }
+            catch (Exception exception)
+            {
+                isSuccess = false;
+            }
+
+            return isSuccess;
+        }
     }
 }
